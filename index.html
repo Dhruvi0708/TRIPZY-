@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripzy - Smart Travel Companion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>.screen:not(.active){
+    display :none!important;}</style>
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="screen active ">
+        <div class="splash-bg">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+        <div class="splash-content">
+            <div class="splash-icon">✈️</div>
+            <h1 class="splash-title">Tripzy</h1>
+            <p class="splash-subtitle">Your Smart Travel Companion</p>
+            <div class="loading-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+        
+
+    </div>
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="screen ">
+        <div class="login-bg">
+            <div class="blob-static blob-static-1"></div>
+            <div class="blob-static blob-static-2"></div>
+        </div>
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <!--<div class="login-icon">✈</div>-->
+                    <div class="login-icon">✈️</div>
+                    <h2 class="login-title">Welcome Back</h2>
+                    <p class="login-subtitle">Sign in to continue your journey</p>
+                </div>
+
+                <div class="tab-switch">
+                    <button class="tab-btn active" data-tab="login">Login</button>
+                    <button class="tab-btn" data-tab="signup">Sign Up</button>
+                </div>
+
+                <form id="auth-form">
+                    <div class="input-group">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="input-group signup-only" style="display: none;">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" placeholder="Enter your full name">
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <span class="btn-text">Login to Tripzy</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+
+                <p class="toggle-auth">
+                    Don't have an account? 
+                    <a href="#" id="toggle-mode">Sign Up</a>
+                </p>
+            </div>
+
+            <div class="login-features">
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <p class="feature-title">Safe & Secure</p>
+                    <p class="feature-desc">Verified rides only</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-award"></i>
+                    <p class="feature-title">Best Prices</p>
+                    <p class="feature-desc">Compare & save</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home Screen -->
+    <div id="home-screen" class="screen">
+        <div class="home-hero">
+            <div class="hero-bg">
+                <div class="blob-hero blob-hero-1"></div>
+                <div class="blob-hero blob-hero-2"></div>
+            </div>
+            <div class="container">
+                <div class="home-header">
+                    <div class="logo-large">
+                       <!-- <span class="logo-icon">✈</span>-->
+                        <span class="logo-icon">✈️</span>
+                        <h1 class="logo-text">Tripzy</h1>
+                    </div>
+                    <p class="tagline">
+                        <i class="fas fa-sparkles"></i>
+                        Compare. Choose. Save. Go Green.
+                        <i class="fas fa-sparkles"></i>
+                    </p>
+                </div>
+
+                <div class="search-card">
+                    <h2 class="search-title">Where are you heading?</h2>
+                    <div class="search-form">
+                        <div class="search-input-group">
+                            <div class="pulse-dot pulse-teal"></div>
+                            <i class="fas fa-map-marker-alt input-icon icon-teal"></i>
+                            <input type="text" id="from-input" placeholder="Pickup Location">
+                        </div>
+                        <div class="swap-btn">⇅</div>
+                        <div class="search-input-group">
+                            <div class="pulse-dot pulse-orange"></div>
+                            <i class="fas fa-map-marker-alt input-icon icon-orange"></i>
+                            <input type="text" id="to-input" placeholder="Drop Location">
+                        </div>
+                        <button class="btn-search" id="search-btn">
+                            Find Best Rides
+                            <span class="rocket">🚀</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-section">
+            <div class="container">
+                <h2 class="section-title">Why Choose Tripzy?</h2>
+                <p class="section-subtitle">Smart features for smarter journeys</p>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <div class="feature-icon cyan"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Safe & Secure</h3>
+                        <p>Verified rides only</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon orange"><i class="fas fa-award"></i></div>
+                        <h3>Best Prices</h3>
+                        <p>Compare & save</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon teal"><i class="fas fa-leaf"></i></div>
+                        <h3>Eco-Friendly</h3>
+                        <p>Green options</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon blue"><i class="fas fa-users"></i></div>
+                        <h3>10M+ Users</h3>
+                        <p>Trusted platform</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-users stat-icon cyan"></i>
+                        <p class="stat-value cyan">10M+</p>
+                        <p class="stat-label">Happy Users</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line stat-icon orange"></i>
+                        <p class="stat-value orange">₹50Cr+</p>
+                        <p class="stat-label">Money Saved</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-tree stat-icon teal"></i>
+                        <p class="stat-value teal">2500T</p>
+                        <p class="stat-label">CO₂ Reduced</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title">What Our Users Say</h2>
+                <p class="section-subtitle">Join millions of happy travelers</p>
+                <div class="testimonials-grid" id="testimonials-grid"></div>
+            </div>
+        </div>
+
+        <div class="partners-section">
+            <div class="container">
+                <h3 class="section-title-small">Trusted Partners</h3>
+                <p class="section-subtitle">All your favorite ride services in one place</p>
+                <div class="partners-grid" id="partners-grid"></div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <div class="cta-bg">
+                <div class="blob-cta blob-cta-1"></div>
+                <div class="blob-cta blob-cta-2"></div>
+            </div>
+            <div class="container">
+                <h2 class="cta-title">Ready to Save Money?</h2>
+                <p class="cta-subtitle">Join 10M+ users making smarter travel choices</p>
+                <button class="btn-cta" onclick="scrollToSearch()">Get Started Free</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <span>✈</span>
+                            <h3>Tripzy</h3>
+                        </div>
+                        <p>Making travel smarter, cheaper & greener</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Safety</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2025 Tripzy. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="results-screen" class="screen">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="nav-logo">
+                        <span>✈</span>
+                        <div>
+                            <h3>Tripzy</h3>
+                            <p>Smart Travel</p>
+                        </div>
+                    </div>
+                    <div class="nav-route" id="nav-route">
+                        <i class="fas fa-map-marker-alt teal"></i>
+                        <span id="nav-from">Delhi</span>
+                        <i class="fas fa-chevron-right"></i>
+                        <i class="fas fa-map-marker-alt orange"></i>
+                        <span id="nav-to">Mumbai</span>
+                    </div>
+                    <button class="btn-new-search" onclick="goToHome()">New Search</button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="user-stats">
+            <div class="container">
+                <div class="stats-bar">
+                    <div class="stat-box">
+                        <i class="fas fa-wallet teal"></i>
+                        <p class="stat-label-small">Total Saved</p>
+                        <p class="stat-value-small teal">₹18,750</p>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-route cyan"></i>
+                        <p class="stat-label-small">Total Trips</p>
+                        <p class="stat-value-small cyan">243</p>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-tree teal"></i>
+                        <p class="stat-label-small">CO₂ Saved</p>
+                        <p class="stat-value-small teal">127 kg</p>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-trophy orange"></i>
+                        <p class="stat-label-small">Rank</p>
+                        <p class="stat-value-small orange">Platinum</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ai-suggestion" id="ai-suggestion">
+            <div class="container">
+                <div class="suggestion-card">
+                    <div class="suggestion-icon">
+                        <i class="fas fa-sparkles"></i>
+                    </div>
+                    <div class="suggestion-content">
+                        <p class="suggestion-title">
+                            <i class="fas fa-star"></i>
+                            AI-Powered Smart Suggestion
+                        </p>
+                        <p class="suggestion-text">
+                            Take <strong>Ola + Metro combo</strong> to save ₹150 and reduce CO₂ emissions by 50%! 
+                            Perfect balance of cost, time, and sustainability.
+                        </p>
+                    </div>
+                    <button class="close-suggestion" onclick="closeSuggestion()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-tabs">
+            <div class="container">
+                <div class="tabs">
+                    <button class="tab active" data-filter="cheapest">
+                        <i class="fas fa-rupee-sign"></i>
+                        Cheapest
+                    </button>
+                    <button class="tab" data-filter="fastest">
+                        <i class="fas fa-clock"></i>
+                        Fastest
+                    </button>
+                    <button class="tab" data-filter="greenest">
+                        <i class="fas fa-leaf"></i>
+                        Greenest
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="rides-section">
+            <div class="container">
+                <div class="rides-grid" id="rides-grid"></div>
+            </div>
+        </div>
+
+        <div class="route-section">
+  <div class="container">
+    <div class="route-card">
+      <div class="route-header">
+        <h3><i class="fas fa-map-marker-alt"></i> Recommended Route</h3>
+        <span class="route-badge">Ola + Metro Combo</span>
+      </div>
+
+      <!-- ✅ Actual Google Map -->
+      <div id="map" style="height: 400px; width: 100%; border-radius: 16px; margin-top: 20px;"></div>
+
+      <!-- Route Steps -->
+      <div class="route-steps" id="route-steps"></div>
+    </div>
+  </div>
+</div>
+
+
+        <!--<div class="route-section">
+            <div class="container">
+                <div class="route-card">
+                    <div class="route-header">
+                        <h3><i class="fas fa-map-marker-alt"></i> Recommended Route</h3>
+                        <span class="route-badge">Ola + Metro Combo</span>
+                    </div>
+                    <div id="map" style="height: 400px; width: 100%; border-radius: 16px;"></div>
+                    <div class="map-placeholder">
+                        <div class="map-content">
+                            <i class="fas fa-map-marker-alt map-icon"></i>
+                            <div class="ping"></div>
+                            <p class="map-title">Interactive Route Map</p>
+                            <p class="map-subtitle">Live traffic updates & navigation available</p>
+                        </div>
+                    </div>
+                    <div class="route-steps" id="route-steps"></div>
+                </div>
+            </div>
+        </div>//-->
+
+        <div class="recent-trips">
+            <div class="container">
+                <h3 class="section-title-small">
+                    <i class="fas fa-history"></i>
+                    Recent Trips
+                </h3>
+                <div class="trips-grid" id="trips-grid"></div>
+            </div>
+        </div>
+
+        <div class="footer-stats">
+            <div class="container">
+                <div class="footer-stats-grid">
+                    <div class="footer-stat-card">
+                        <i class="fas fa-chart-line teal"></i>
+                        <p class="footer-stat-value teal">2.4 kg</p>
+                        <p class="footer-stat-label">CO₂ Saved</p>
+                    </div>
+                    <div class="footer-stat-card">
+                        <i class="fas fa-rupee-sign orange"></i>
+                        <p class="footer-stat-value orange">₹150</p>
+                        <p class="footer-stat-label">Money Saved</p>
+                    </div>
+                    <div class="footer-stat-card">
+                        <i class="fas fa-clock cyan"></i>
+                        <p class="footer-stat-value cyan">28 min</p>
+                        <p class="footer-stat-label">Total Time</p>
+                    </div>
+                </div>
+                <div class="footer-simple">
+                    <div class="footer-simple-logo">
+                        <span>✈</span>
+                        <p>Tripzy</p>
+                    </div>
+                    <p class="footer-simple-text">Making travel smarter, cheaper & greener</p>
+                    <div class="footer-links">
+                        <a href="#">About</a>
+                        <span>•</span>
+                        <a href="#">Contact</a>
+                        <span>•</span>
+                        <a href="#">Privacy</a>
+                        <span>•</span>
+                        <a href="#">Terms</a>
+                    </div>
+                    <p class="footer-copyright">© 2025 Tripzy. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script 
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBa3AnH40ruqqPwbIa5cgqImcWS_6Qazb8&callback=initMap" 
+  async defer>
+</script>
+    <script src="script.js"></script>
+</body>
+</html>
